@@ -541,3 +541,25 @@ html {
       will-change: transform;
     }
   }
+
+  /* Media queries for responsive images */
+  @media screen and (max-width: 428px) { /* iPhone 15 Pro width */
+    #about .grid-cols-2 {
+      gap: 0.5rem;
+    }
+    
+    #about .max-h-\[500px\] {
+      max-height: 300px;
+    }
+    
+    #about img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+    
+    #about .grid-rows-2 {
+      gap: 0.5rem;
+    }
+  }
