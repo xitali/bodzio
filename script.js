@@ -137,54 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   counters.forEach((counter) => counterObserver.observe(counter));
 
-  // Form handling with validation
-  const form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Basic validation
-      const name = form.querySelector("#name").value.trim();
-      const email = form.querySelector("#email").value.trim();
-      const subject = form.querySelector("#subject").value.trim();
-      const message = form.querySelector("#message").value.trim();
-
-      // Email validation regex
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (name.length < 2) {
-        alert("Proszę podać prawidłowe imię");
-        return;
-      }
-
-      if (!emailRegex.test(email)) {
-        alert("Proszę podać prawidłowy adres email");
-        return;
-      }
-
-      if (subject.length < 3) {
-        alert("Proszę podać temat wiadomości");
-        return;
-      }
-
-      if (message.length < 10) {
-        alert("Wiadomość jest zbyt krótka");
-        return;
-      }
-
-      // Get form data
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      // Here you would typically send the data to your server
-      console.log("Form submitted:", data);
-
-      // Show success message
-      alert("Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.");
-      form.reset();
-    });
-  }
-
   // Smooth scroll for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
