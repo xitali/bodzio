@@ -125,6 +125,15 @@ body {
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
 .timeline-item {
   position: relative;
   padding-left: 2rem;
@@ -592,5 +601,22 @@ textarea:focus {
 
   #about .grid-rows-2 {
     gap: 0.5rem;
+  }
+}
+
+/* Scroll arrow positioning */
+.scroll-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  animation: bounce 1s infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .scroll-arrow {
+    bottom: -20px; /* Move it below the stats on mobile */
   }
 }
